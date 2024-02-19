@@ -12,13 +12,23 @@ const Page = () => {
         setTitle('');
     }
 
+    const deleteHandler=(i)=>{
+        let copyTask = [...mainTask];
+        copyTask.splice(i,1);
+        setMainTask(copyTask);
+    }
+
     let renderTask = <h2 className="text-3xl font-bold text-center">No task added</h2>
     if (mainTask.length>0){
     renderTask = mainTask.map((t,i)=>{
-        return <li><div className="flex justify-between">
+        return <li key={i} className="flex justify-between items-center"><div className="flex justify-between items-center w-11/12">
             <h5 className="text-2xl font-semibold">{t.title}</h5>
-            <h6 className="text-xl font-semibold">{t.desc}</h6>
-        </div></li>
+            <h6 className="text-lg font-light">{t.desc}</h6>
+        </div>
+            <button onClick={()=>{
+                deleteHandler(i)
+            }} className="bg-red-400 text-white rounded font-bold">Delete</button>
+        </li>
     })}
      else {
         renderTask = <h2 className="text-3xl font-bold text-center">No task added</h2>
@@ -37,7 +47,7 @@ const Page = () => {
             </form>
             <hr/>
             <div className="p-8 bg-purple-100">
-                <div className="flex justify-between">
+                <div className="flex justify-between w-11/12">
                     <h3 className="font-bold text-3xl">Title</h3>
                     <h3 className="font-bold text-3xl">Description</h3>
                 </div>
