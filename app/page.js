@@ -18,7 +18,7 @@ const Page = () => {
         setMainTask(copyTask);
     }
 
-    let renderTask = <h2 className="text-3xl font-bold text-center">No task added</h2>
+    let renderTask;
     if (mainTask.length>0){
     renderTask = mainTask.map((t,i)=>{
         return <li key={i} className="flex justify-between items-center"><div className="flex justify-between items-center w-11/12">
