@@ -27,11 +27,11 @@ const Page = () => {
         </div>
             <button onClick={()=>{
                 deleteHandler(i)
-            }} className="bg-red-400 text-white rounded font-bold">Delete</button>
+            }} className="bg-red-400 text-white rounded font-bold">Delete task</button>
         </li>
     })}
      else {
-        renderTask = <h2 className="text-3xl font-bold text-center">No task added</h2>
+        renderTask = <h2 className="text-3xl font-bold text-center">No tasks added</h2>
     }
     return (
         <>
