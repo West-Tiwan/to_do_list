@@ -35,7 +35,7 @@ const Page = () => {
     }
     return (
         <>
-            <h1 className="text-white bg-black flex justify-center items-center py-4 text-5xl font-bold">To-Do List</h1>
+            <h1 className="text-white bg-black flex justify-center items-center py-4 text-5xl font-bold">westy's To-Do List</h1>
             <form className="flex justify-center items-center max-h-dvh m-20" onSubmit={submitHandler}>
                 <input type="text" placeholder="Enter task" className="border-3 px-4 py-2 m-8 text-3xl" value={title} onChange={(elem)=>{
                     setTitle(elem.target.value);
